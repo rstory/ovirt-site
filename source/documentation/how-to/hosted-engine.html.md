@@ -152,11 +152,12 @@ Assuming you have already deployed Hosted Engine on your hosts and running the H
 4.  Upgrade that host with new packages (changes repository to latest version and run yum update -y) on this stage may appear vdsm-tool exception <https://bugzilla.redhat.com/show_bug.cgi?id=1088805>
 5.  Restart vdsmd (# service vdsmd restart)
 6.  Restart ha-agent and broker services (# systemctl restart ovirt-ha-broker && systemctl restart ovirt-ha-agent)
-7.  Exit the global maintenance mode: in a few minutes the engine VM should migrate to the fresh upgraded host cause it will get an higher score
-8.  When the migration has been completed re-enter into global maintenance mode
-9.  Repeat step 3-6 for all the other hosted-engine hosts
-10. Enter for example via UI to engine and change 'Default' cluster (where all your hosted hosts seats) compatibility version to current version (for example 3.6 and activate your hosts (to get features of the new version)
-11. Change hosted-engine maintenance to none, starting from 3.4 you can do it via UI(right click on engine vm, and 'Disable Global HA Maintenance Mode')
+7.  Activate the now-upgraded hosted-engine node from the engine.
+8.  Exit the global maintenance mode: in a few minutes the engine VM should migrate to the fresh upgraded host cause it will get an higher score
+9.  When the migration has been completed re-enter into global maintenance mode
+10. Repeat step 3-6 for all the other hosted-engine hosts
+11. Enter for example via UI to engine and change 'Default' cluster (where all your hosted hosts seats) compatibility version to current version (for example 3.6 and activate your hosts (to get features of the new version)
+12. Change hosted-engine maintenance to none, starting from 3.4 you can do it via UI(right click on engine vm, and 'Disable Global HA Maintenance Mode')
 
 ## **Hosted Engine Backup and Restore**
 
